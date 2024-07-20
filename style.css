@@ -29,7 +29,6 @@ body {
 
 a {
     color: #dfdfdf;
-    text-decoration: none;
 }
 
 h1,h2,h3,h4,h5 {
@@ -98,13 +97,24 @@ div {
     max-width: 70%;
 }
 
+#INFO {
+    margin: 50px;
+}
+
 @media (max-width: 767px) {
     #main {
         max-width: 100%;
     }
+    #left, #right {
+        display: none;
+    }
+    div {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
 }
 
 #left, #right {
-    width: 20%;
-    background-color: rgb(30, 30, 30);
+    width: 55%;
+    background-color: rgb(20, 20, 20);
 }
