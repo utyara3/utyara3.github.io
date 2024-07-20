@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Story Гайдер</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="right"></div>
+  <div id="content">
+    <div id="hdrimgs">
+      <a href="https://discord.com/channels/423242655498240000/1166213777449041970" target="_blank">
+        <img src="imgs/header.png" alt="stonestory-img" id="hdrlog">
+      </a>
+      <a href="https://discordapp.com/users/698108565403074571/" target="_blank">
+        <img src="imgs/utyara3.png" alt="utyara3-logo" id="hdrutyara">
+      </a>
+    </div>
+
+    <div id="header">
+      <h1>Ультимативный гайд по Stone Story</h1>
+    </div>
+
+    <div id="main">
+
+      <div id="introduction">
+        Данный гайд предназначем для того чтобы как можно 
+        больше пользователей узнали про все особенности игры,
+        нашли ответ на свой вопрос.
+      </div>
+
+      <div id="navigation">
+        <nav>
+          <b>Навигационная панель</b>
+          <ul>
+            <b>Скрипты</b>
+            <ul>
+              <li>
+                <a href="#beginning">
+                  Начало гайда
+                </a>
+              </li>
+              <li>
+                <a href="#AAC">
+                  ПАА(пропуск анимации атаки)
+                </a>
+              </li>
+              <li>
+                <a href="#BFG">КПБ на два экрана</a>
+              </li>
+              <li>
+                <a href="#BARDICHE">Использование бердыша</a>
+              </li>
+              <li>
+                <a href="#DEBUFFS">Накладывание дебаффов</a>
+              </li>
+            </ul>
+            <br>
+            <b>Локации</b>
+            <ul>
+              <li>
+                <a href="#DEADWOOD">Каньон Дедвуд</a>
+              </li>
+            </ul>
+
+          </ul>
+        </nav>
+      </div>
+
+      <div id="AAC">
+        <h3>AAC (вставить в начало скрипта)</h3>
+          <div id="AAC-info">
+            Данный код позволяет пропускать кадры анимации атаки и бить намного быстрее, 
+            что позволяет увеличить ваш урон в секунду.
+          </div>
+        <pre><code>func isEquippedTwoHanded()
+  return !item.left
+func CheckForAAC()
+  ?!ai.enabled
+    return
+
+  var isTwoHanded = isEquippedTwoHanded()
+  var leftItem = item.left
+  var rightItem = item.right
+  
+  ?item.right.state = 3
+    equipR shield *0 +0
+  ?item.left.state = 3
+    equipL wand *0 +0
+  
+  ?isTwoHanded
+    ?rightItem
+      equip @rightItem@
+    :?leftItem
+      equip @leftItem@
+  :
+    ?rightItem
+      equipR @rightItem@
+    ?leftItem
+      equipL @leftItem@
+    
+CheckForAAC()</code></pre>
+      </div>
+
+      <div id="BFG">
+        <h3>
+          Использование Клинка Павшего Бога на 2 экрана.
+        </h3>
+
+        <div id="BFG-info">
+          Клинок Павшего Бога при активации, если убивает врага своей активной способностью 
+          дает стаки кары, которая позволяет наносить дополнительный магический урон при 
+          наложении дебаффа на врага, чем больше убито врагов, тем больше стаков кары, 
+          тем больше урона, данный скрипт перемещает экран вперед, что позволяет задеть 
+          активной способностью не только врагов которые на экране вместе с вашим персонажем, 
+          а и на следущем.
+        </div>
+
+        <pre><code>var delay = 20
+?item.GetCooldown("blade") <=0 &
+^foe.count > 5 &
+^foe.distance < 30
+  screen.next()
+  delay--
+  ?delay=0
+    equip blade
+    activate r
+    screen.ResetOffset()
+    delay = 20</code></pre>
+      </div>
+
+      <div id="BARDICHE">
+        <h3>
+          Использование Бердыша(по аналогии можно применить к некоторым остальным предметам, имеющим анимацию).
+        </h3>
+
+        <div id="BARDICHE-info">
+          Бердыш имеет сильную активную способность, позволяющую наносить большой моментальный урон, 
+          но просто активировать его не получится, из за того что нанесение урона активной 
+          способностью имеет долгую анимацию, из за чего приходится дописывать дополнительные условия,
+          до которых многие пользователи могли не додуматься.
+        </div>
+
+        <pre><code>?item.GetCooldown(＂bardiche＂)=0 |
+^item.GetCooldown(＂bardiche＂)>870
+  equip bardiche
+  activate r</code></pre>
+      </div>
+
+      <div id="DEBUFFS">
+        <h3>
+          Накладывание Дебаффов (вместо cult mask можете взять что то другое)
+        </h3>
+        <div id="DEBUFFS-info">
+          Накладывание дебаффов на врагов очень может поспособствовать прохождению локации, 
+          из за того что враг будет медленнее бить, будет наносить меньше урона и будет подожжён, 
+          лучше всего использовать на боссах. Вместо оружий что в этом коде можете использовать свои, 
+          например взять в левую руку еще оружие, или вместо дебаффающих мечей дебаффающие жезлы и т.д.
+        </div>
+        <pre><code>?foe.debuffs.string ! "chill:6"
+  equipR ice sword dI
+:?foe.debuffs.string ! "damage"
+  equipR poison sword dP
+:?foe.debuffs.string ! "dot"
+  equipR fire sword dF</code></pre>
+      </div>
+
+    </div>
+  </div>
+  <div id="left"></div>
+</body>
+</html>
