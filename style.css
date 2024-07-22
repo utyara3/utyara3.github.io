@@ -89,6 +89,7 @@ div {
 }
 
 #hdrutyara {
+    display: none;
     width: 160px;
     height: auto;
 }
