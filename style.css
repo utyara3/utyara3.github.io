@@ -63,6 +63,12 @@ pre {
     border-radius: 5px;
     padding: 5px;
     background-color: #313131ec;
+    overflow-x: auto;
+}
+
+pre, code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 nav {
@@ -156,7 +162,7 @@ div {
         margin-left: 5px;
     }
     .btn-up {
-        right: 30px;
+        right: 10px;
     }
 }
 
@@ -166,6 +172,3 @@ div {
     background-color: rgb(20, 20, 20);
 }
 
-* {
-    border: 1px solid red !important;
-}
