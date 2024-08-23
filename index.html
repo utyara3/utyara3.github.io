@@ -436,27 +436,32 @@ moondialTimer++
             и поэтому можно написать универсальный код:
           </div>
           <h4>Пуфф</h4>
-          <pre><code>?foe.distance <= 4
+          <pre><code>?foe.distance < 5
   equip mind stone</code></pre>
           <h4>Вагонетка с бомбой</h4>
           <pre><code>?foe = bomb cart
   ?foe.distance = 12
     equipR dashing shield
     equipL triskelion
-  :?foe.distance < 10
+  :?foe.distance < 12
     equipR mind stone</code></pre>
         </div>
         <hr>
         <div id="TALISMANS">
           <h3>Талисманы</h3>
           <div id="TALISMANS-info">
-            Талисманы - весьма полезная вещь, которую я советую всегда использовать при прохождении локации. Они могут очень сильно помочь при прохождении локации, ускорить время на ней. Но призыв
-            может показаться сложной вещью, т.к. имеет долгую анимацию, вот как я реализовал призыв талисмана (вставить в начало локации, чтобы другие условия не сбивали анимацию, также помменять
-            на тот талисман который вам нужен):
+            Талисманы - весьма полезная вещь, которую я советую всегда использовать при прохождении локации.
+            Они могут очень сильно помочь при прохождении локации, ускорить время на ней. Но призыв
+            может показаться сложной вещью, т.к. имеет долгую анимацию
+            (проследите за тем чтобы анимация не сбивалась другими условиями, добавляйте перед ними : ):
           </div>
-          <pre><code>?foe.distance > 20 & 
-^totaltime > 50 &
-^summon.count = 0
+          <pre><code>?summmon.GetId() ! "voidweaver" &
+^foe ! boss
+  equipR aether talisman
+  equipL triskelion
+  activate r 
+:?summmon.GetId() ! "cinderwisp" &
+^foe = boss
   equipR fire talisman
   equipL triskelion
   activate r</code></pre>
@@ -767,10 +772,9 @@ var lastName = "Басурман"</code></pre>
           <h3>Другое</h3>
           <div id="ANOTHER-info">
             Для того чтобы оружие стало радужным необходимо 16+ зачарование и выше <br><br> Если хотите получить рунный предмет с рунным свойством, то сначала чаруйте руну а потом сам предмет, например скрафтить рунный меч яда:<br> руна
-            яда + жезл камня = жезл яда ->dP
-            <- <br>
-            жезл яда + меч = меч яда dP <br> жезл камня + руна яда = жезл яда ->D
-            <- 
+            яда + жезл камня = жезл яда -&gt;dP&lt;- <br>
+            жезл яда + меч = меч яда dP <br> жезл камня + руна яда = жезл яда -&gt;D&lt;- 
+            <br>
             <img src="imgs/WeaknessChartThingy.png" alt="WeaknessChartThingy">
             <img src="imgs/fuse.png" alt="FuseFaster">
           </div>
