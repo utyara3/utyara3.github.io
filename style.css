@@ -69,6 +69,14 @@ pre {
 pre, code {
     white-space: pre-wrap;
     word-wrap: break-word;
+    transition: 100ms;
+}
+
+pre:hover {
+    transform: scale(1.05);
+    border: 1px solid;
+    border-color: rgb(90, 90, 90);
+    outline: 1px solid;
 }
 
 nav {
@@ -110,6 +118,16 @@ div {
 #main {
     max-width: 90%;
 }
+
+kara {
+    color:#881be0;
+}
+
+.ascii {
+    display: flex;
+    justify-content: center;
+}
+
 
 #INFO {
     margin: 50px;
