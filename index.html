@@ -65,15 +65,18 @@
                 <li>
                   <a href="#ITEMFACTORY">А на что мне зачаровать оружие?</a>
                 </li>
-                <!-- <li>
-                  <a href="#PERMAPOT">Пермапот(бесконечное зелье)</a> 
-                </li> -->
+                <li>
+                  <a href="#PERMAPOT">Пермапот(бесконечное зелье)</a> * 
+                </li> 
               </ul>
               <br>
               <b><a href="#SCRIPTS">Скрипты</a></b>
               <ul>
                 <li>
                   <a href="#AAC">ПАА(пропуск анимации атаки)</a>
+                </li>
+                <li>
+                  <a href="#AAC2">ПАА 1 удар 1 кадр</a> *
                 </li>
                 <li>
                   <a href="#BFG">КПБ на два экрана</a>
@@ -90,9 +93,9 @@
                 <li>
                   <a href="#RUNESHIELD">Рунные щиты</a>
                 </li>
-                <!-- <li>
-                    <a href="#MOONDIAL">Мундиал</a>
-                </li> -->
+                <li>
+                    <a href="#MOONDIAL">Мундиал</a> *
+                </li>
                 <li>
                   <a href="#DODGE">Уклонение от атак боссов</a>
                 </li>
@@ -135,6 +138,7 @@
             </ul>
           </nav>
         </div>
+        <p>Примечание: то что помечено * не для новчиков, это больше спидраннерские штуки которые требуют специальных навыков и хороших предметов</p>
         <hr>
         <div id="FAQ">
           <hr>
@@ -219,8 +223,8 @@
           </div>
         </div>
         <hr>
-        <!--<div id="PERMAPOT">
-          <h3>Пермапот</h3>
+        <div id="PERMAPOT">
+          <h3>Пермапот *</h3>
           <div id="PERMAPOT-info">
             Бесконечное зелье очень непростой трюк, для которого вам понадобиться иметь крутое снаряжение. Для этого вам понадобиться маска культиста с зачарованием на +21 на секретное свойство продления самых старых баффов, предпочитаемое зелье и сильное оружие.
             Инструкция по использованию:
@@ -250,7 +254,7 @@
             Зачарование маски обязательно должно быть +21. У вас ничего не получится если зелье закончится во время прохождения.
           </div>
         </div>
-        <hr> -->
+        <hr>
         <div id="SCRIPTS">
           <hr>
           <h1>
@@ -261,33 +265,29 @@
           <div id="AAC-info">
             ПАА - пропуск анимации атаки, на английском - AAC (atack animation cancel) Данный код позволяет пропускать кадры анимации атаки и бить намного быстрее, что позволяет увеличить ваш урон в секунду.
           </div>
-          <pre><code>func isEquippedTwoHanded()
-  return !item.left
-func CheckForAAC()
-  ?!ai.enabled
-    return
-
-  var isTwoHanded = isEquippedTwoHanded()
-  var leftItem = item.left
-  var rightItem = item.right
-  
-  ?item.right.state = 3
-    equipR shield *0 +0
-  ?item.left.state = 3
-    equipL wand *0 +0
-  
-  ?isTwoHanded
-    ?rightItem
-      equip @rightItem@
-    :?leftItem
-      equip @leftItem@
+          <pre><code>?item.right.state = 3
+  equipR *0 shield //trash
+  equip @item.right@
+?item.left.state = 3
+  equipL *0 wand //trash
+  equipL @item.left@</code></pre>
+        </div>
+        <hr>
+        <div id="AAC2">
+          <h3>ПАА 1 кадр 1 секунда *</h3>
+            <div id="AAC2-info">
+              Данный ПАА предназначен для руки скелета *10 +21 под зельем берсерка, т.к. позволяет бить каждый кадр, что ооочень мощно.
+            </div>
+            <pre><code>?item.left.state = 3
+  equipL stone
+  equipL @item.left@
+?item.right.state = 3
+  ?totaltime % 2
+    equipR stone
   :
-    ?rightItem
-      equipR @rightItem@
-    ?leftItem
-      equipL @leftItem@
-    
-CheckForAAC()</code></pre>
+    equipR sword
+  equip @item.right@
+            </code></pre>
         </div>
         <hr>
         <div id="MOVEMENT">
@@ -340,6 +340,7 @@ CheckForAAC()</code></pre>
     screen.ResetOffset()
     delay = 20</code></pre>
         </div>
+        <video src="videos/BFG.mp4" muted autoplay loop></video>
         <hr>
         <div id="BARDICHE">
           <h3>
@@ -405,7 +406,7 @@ CheckForAAC()</code></pre>
 equipL triskelion</code></pre>
         </div>
         <hr>
-        <!-- <div>
+        <div>
           <h3>Мундиал</h3>
           <div id="MOONDIAL">
             Для данной фичи вам понадобятся 2 меча с зачарованием +21 на скорость атаки. В чем заключается суть: 
@@ -425,7 +426,7 @@ moondialTimer++
   equipL "ваш_меч2"
   equipR "ваш_меч1"</code></pre>
         </div>
-        <hr> -->
+        <hr>
         <div id="DODGE">
           <h3>Уклонение от атаки босса</h3>
           <div id="DODGE-info">
@@ -825,6 +826,7 @@ nopqrstuvwxyz
         <div id="INFO">
           Не нашли ответ на свой вопрос? Обращайтесь в дискорд канал, там вам обязательно помогут. Нашли баг или неверную информацию? Обращайтесь ко мне в личные сообщения в дискорде. Изображения кликабельны. Сайт находится в разработке, информация еще добавляется.
         </div>
+        <div id="PAYALNIK">Welcome back, Payalnik! \o/</div>
       </div>
       <!-------------------------------------------------------------------------->
     </div>
