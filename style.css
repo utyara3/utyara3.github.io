@@ -39,6 +39,11 @@ h5 {
     color: white;
 }
 
+video {
+    width: 100%;
+    height: auto;
+}
+
 h3 {
     margin-top: 50px;
 }
@@ -133,6 +138,11 @@ kara {
     margin: 50px;
 }
 
+#PAYALNIK {
+    display: flex;
+    justify-content: center;
+}
+
 .btn-up {
   position: fixed;
   background-color: #673ab7;
@@ -181,6 +191,10 @@ kara {
     }
     .btn-up {
         right: 10px;
+    }
+    video {
+        width: 100%;
+        height: auto;
     }
 }
 
