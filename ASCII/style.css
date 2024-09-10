@@ -1,0 +1,23 @@
+#left,
+#right {
+    width: 55%;
+    background-color: rgb(20, 20, 20);
+}
+
+body {
+    background-color: black;
+    color: rgb(168, 168, 168);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}

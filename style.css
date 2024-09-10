@@ -1,0 +1,49 @@
+#left,
+#right {
+    width: 55%;
+    background-color: rgb(20, 20, 20);
+}
+
+body {
+    background-color: black;
+    color: rgb(168, 168, 168);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#center {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+#navigation {
+    width: 90%;
+}
+
+a {
+    color: #dfdfdf;
+}
+
+#hdrimgs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+#hdrlog {
+    width: 300px;
+    height: auto;
+}
+
+#hdrutyara {
+    width: 50px;
+    height: auto;
+}
