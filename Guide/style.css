@@ -1,3 +1,7 @@
+:root {
+    --border-primary: white;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -169,6 +173,25 @@ kara {
 
 .btn-up_hide {
   display: none;
+}
+
+table {
+    margin: auto;
+    border: 1px solid var(--border-primary);
+    border-color: white;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    text-align: center;
+    border: 1px solid var(--border-primary);
+    padding: .5rem .75rem;
+    vertical-align: middle;
+    width: 50%;
+}
+
+thead {
+    font-size: xx-large;
 }
 
 @media (hover: hover) and (pointer: fine) {
