@@ -1,55 +1,88 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="faviconV2.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Главная</title>
+    <title>StoneStoryRPG</title>
 </head>
 <body>
-    <div id="left"></div>
-    <div id="center">
-        <div id="hdrimgs">
-            <a href="https://discord.com/invite/StoneStoryRPG" target="_blank" id="hdrlog">
-                <img src="Guide/imgs/header.png" alt="stonestory-img">
-            </a>
-            
-          </div>
-        <div id="general">
-            <h1>Главная</h1>
-        </div>
-        <br>
-        <div id="navigation">
-            <b>Навигационная панель</b>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="Guide/index.html">Ультимативный Гайд</a>
-                    </li>
-                    <br>
-                    <li>
-                        <a href="ASCII/index.html">ASCII</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <pre id="art">
-             .-.            
-            /_  \           
-           /.:\  \          
-          /:::|_  .         
-          \ |:::) |         
-           \|::/  |         
-         _,´\:|    `--.     
-_     __.--´    )|   ´    \    
-\`--'´      )   \|         \   
-|        _.-\    !    \     \  
-| ´   ,-´    `.        `.   |  
-!   .´         `.        \  /  
-'.  |            \       | /   
-'| '             \      |´    
-                  !     |     
-        </pre>
+    <div class="btn-up btn-up_hide"></div>
+    <div id="sidebar" class="sidebar">
+        <a href="https://stonestoryrpg.com/" target="_blank">
+            <img src="src/logo.jpg" alt="логотип" id="logo">
+        </a>
+        <ul>
+            <li id="active" class="load index">
+                <a href="#" class="from-sidebar">Главная</a>
+            </li>
+            <li class="load guide">
+                <a href="#" class="from-sidebar">Гайд</a>
+            </li>
+            <li class="load stonescript">
+                <a href="#" class="from-sidebar">СтоунСкрипт</a>
+            </li>
+            <li class="load speedrun">
+                <a href="#" class="from-sidebar">Спидран</a>
+            </li>
+            <li class="load ascii">
+                <a href="#" class="from-sidebar">ASCII</a>
+            </li>
+        </ul>
     </div>
-    <div id="right"></div>
+    
+    <div class="wrapper">
+        <button class="menu-but">
+            <img src="src/menu_but.png" alt="кнопка меню">
+        </button>
+        <div id="main-content">
+            <header class="center">
+
+                <div>
+                    <h1>StoneStoryRPG</h1>
+                </div>
+
+            </header>
+            <main>
+
+                <div>
+                    <p>Stone Story — игра, отмеченная наградами авто-RPG со стратегическими боями, глубокими элементами крафта и программирования, анимированная полностью в ASCII-арте. В мире вечной тьмы один камень может изменить все...</p>
+                </div>
+
+                <div class="main-img-container">
+                    <img src="src/store1.png" alt="boat" class="main-img">
+                </div>
+
+                <div>
+                    <p>Действие происходит в темном и зловещем мире, где монстры и тайны терзают мир. Отправьтесь на поиски, чтобы объединить 9 магических камней душ и восстановить свет.</p>
+                    <p>Игра берет элементы из разных жанров и переупаковывает их в совершенно уникальный опыт. Одна из определяющих механик Stone Story заключается в том, что у вас нет прямого контроля над персонажем игрока, поскольку ИИ выполняет все исследования, бои и добычу. Хотя это авто-RPG, это не значит, что это айдл игра. Зелья и особые способности усиливаются за счет правильного расчета времени. Бои с боссами интенсивны и требуют быстрой смены предметов, если босс меняет шаблоны.</p>
+                    <p>Ваше любопытство станет вашим лучшим инструментом, когда вы погрузитесь в игру и обнаружите, что под ее обманчиво простой поверхностью скрывается нечто большее.</p>
+                </div>
+
+                <div class="main-img-container">
+                    <img src="src/store2.png" alt="fight" class="main-img">
+                </div>
+                
+            </main>
+            
+        </div>
+        <footer>
+            <hr>
+            <div class="footer-main">
+                <p>
+                    Не нашли ответ на свой вопрос? Нашли баг или неверную информацию?
+                    <br>
+                    Обращайтесь в <a href="https://t.me/StoneStoryRpgRu" target="_blank">телеграм чат</a>, там вам обязательно помогут. 
+                    <br>
+                    Сайт находится в разработке, информация еще добавляется
+                  </p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js" defer></script>
 </body>
 </html>

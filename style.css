@@ -1,92 +1,306 @@
-#left,
-#right {
-    width: 55%;
-    background-color: rgb(20, 20, 20);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
+    display: flex;
     background-color: black;
-    color: rgb(168, 168, 168);
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+    font-family: "Neucha", sans-serif;
+    font-size: larger;
+    color: rgb(207, 207, 207);
+    font-size: 1.5rem;
 }
 
-#center {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-}
-
-img {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    max-width: 100%;
-    transition: 200ms;
-    box-sizing: border-box;
-}
-
-img:hover {
-    transform: scale(1.1);
-    border: 2px solid;
-    border-color: rgb(90, 90, 90);
-    outline: 2px solid;
-}
-
-#navigation {
-    width: 90%;
-}
-
-a {
-    color: #dfdfdf;
-}
-
-#hdrimgs {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-
-#hdrlog {
-    width: 300px;
-    height: auto;
-}
-
-#hdrutyara {
-    width: 50px;
-    height: auto;
-}
-
-pre {
-    display: block;
-    text-align: -webkit-center;
-    unicode-bidi: isolate;
+h1,
+h2,
+h3,
+h3,
+h4,
+h5 {
     color: white;
 }
 
-@media (max-width: 767px) {
-    #main {
-        max-width: 100%;
-    }
-    #left,
-    #right {
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+div {
+    scroll-margin-top: 50px;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+    margin: 10px;
+    border: 1px white solid;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    text-align: center;
+    border: 1px white solid;
+    padding: .5rem .75rem;
+    vertical-align: middle;
+    width: 50%;
+}
+
+thead {
+    font-size: xx-large;
+}
+
+table caption {
+    margin-bottom: 20px;
+}
+
+pre {
+    display: inline-block;
+    max-width: 100%;
+    padding: 0 10px;
+    margin: 10px 0;
+    border: 5px rgb(78, 78, 78) double;
+    border-left-color: rgb(236, 236, 236);
+    background-color: rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+video {
+    border: 1px white solid;
+    margin-bottom: 10px;
+}
+
+hr {
+    margin: 10px 0;
+}
+.border {
+    margin-top: 10px;
+    border: 1px white solid;
+}
+
+.btn-up {
+    position: fixed;
+    background-color: #424242;
+    right: 10px;
+    bottom: 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+    z-index: 100;
+  }
+  
+.btn-up::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+}
+
+.btn-up_hide {
+    display: none;
+}
+
+.menu-but {
+    display: none;
+    border: none;
+    cursor: pointer;
+    width: 60px;
+    margin: 10px 0 0 10px;
+}
+
+.menu-but img {
+    border-radius: 0;
+    pointer-events: none;
+    display: block;
+    width: 100%;
+}
+
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    width: 17%;
+    min-width: 170px;
+    height: 100vh;
+    background-color: rgb(20, 20, 20);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 3px 0 0 3px;
+}
+
+.sidebar #logo {
+    transition: 100ms;
+    margin-top: 10px;
+    margin-left: 5%;
+    max-width: 70%;
+}
+
+
+ul {
+    list-style-type: circle;
+    padding: 10px 30px;
+}
+
+li b {
+    color: white;
+}
+
+.sidebar ul {
+    padding: 5%;
+    list-style-type: none;
+}
+.sidebar li {
+    background-color: rgb(41, 41, 41);
+    margin: 10% 10% 0 0;
+    padding: 5% 0 5% 3%;
+    transition: 100ms;
+}
+
+.sidebar li:not(#active):hover, .sidebar #logo:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+    transform: scale(1.05);
+}
+
+.sidebar a:active,
+.sidebar a:hover,
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar #active {
+    border: 2px white dashed;
+}
+
+.wrapper {
+    width: 83%;
+    padding-left: 15px;
+}
+
+#main-content p {
+    margin: 20px 0 20px 0;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    margin: 60px;
+}
+
+.main-img-container {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-img {
+    width:70%;
+    border: 1px solid gray;
+}
+
+.footer-main {
+    padding: 20px 0 10px 0;
+    text-align: center;
+    color: #757575;
+    margin-bottom: 5px;
+}
+
+.footer-main a{
+    color:#a2a2a2;
+}
+
+#main-content main div {
+    margin-top: 30px;
+}
+
+#main-content {
+    background-image: url("src/background.png");
+}
+
+.ASCII-download {
+    margin: 10px 0;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.download-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.potion, .resize{
+    max-width: 50%;
+}
+
+
+@media (max-width: 768px) {
+    .sidebar {
         display: none;
     }
-    div {
-        margin-right: 5px;
-        margin-left: 5px;
+    .menu-but {
+        display: block;
     }
-    .btn-up {
-        right: 10px;
-    }
-    video {
-        width: 100%;
+    .sidebar.open {
+        position: sticky;
+        display:block;
+        z-index: 10;
         height: auto;
     }
+    .wrapper {
+        width: 100%;
+        padding-left: 0;
+    }
+    #main-content {
+        margin: 10px;
+    }
+    .main-img {
+        width: 100%;
+    }
+    .potion, .resize {
+        max-width: 100%;
+    }
+
 }
