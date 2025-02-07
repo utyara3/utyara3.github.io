@@ -36,6 +36,15 @@
                         <li>
                             <a href="#moonjuggling">Мунджагглинг</a>
                         </li>
+                        <li>
+                            <a href="#stutterstepping">Статтерстепинг</a>
+                        </li>
+                        <li>
+                            <a href="#smoothcasting">Смузкастинг</a>
+                        </li>
+                        <li>
+                            <a href="#wands">Активация жезлов</a>
+                        </li>
                     </ul>
                 </ul>
             </nav>
@@ -80,10 +89,11 @@
             </div>
             <hr>
             <div id="AAC30">
-                <h3>Пропуск Анимации Атаки для 30 aps</h3>
+                <h3>Пропуск Анимации Атаки для 30 авс</h3>
                 <div>
                     <p>Данный пропуск анимации атаки нужен если ваше оружие атакует со скоростью 30 ударов в секунду, т.е каждый кадр.</p>
                     <p>Такое можно достичь при помощи зачарований на скорость атаки и зелья берсерка, возможно использование лунного камня.</p>
+                    <p>Также можно сразу использовать его, чтобы не париться в дальнейшем по этому поводу, т.к. от обычного ПАА он ничем не отличается, кроме как поддерживает 30 авс</p>
                     <pre>
 <code>
 ?item.right.state = 3
@@ -96,6 +106,23 @@
   equipL *0 wand //trash
   equipL @item.left@</code>
                     </pre>
+                    <p>Также я немного улучшил этот ПАА. Он работает по тому же принципу, но его разница от обычного ПАА заключается в его "экономии" очков мощи (gp).</p>
+                    <p>Использование этого ПАА помогает сэкономить очки мощи для прохождения низких звезд, где каждое очко очень важно.</p>
+                    <pre>
+<code>
+?item.right.state = 3
+  ?totaltime % 2 = 0
+    equipR trisk
+  :
+    equipR dash shiny
+  equip @item.right@
+?item.left.state = 3
+  equipL trisk
+  equipL @item.left@</code>
+                    </pre>
+                    <p>В этом коде в качестве оружий, которые сменяют основное для того чтобы сбить 3 фазу является трискелион и стремительный щит.</p>
+                    <p>Дело в том, что это самые часто используемые пердметы в игре, особенно в спидранах.</p>
+                    <p>Вы можете заменить оружия на свои, которые вы используете в прохождении. Суть заключается в том, чтобы не экипировать новые оружия, которые может и занимают пустяковые 2 очка мощи, но они могут очень решить.</p>
                 </div>
             </div>
             <hr>
@@ -310,10 +337,58 @@ func BFG()
                                 </tr>
                                 <tr>
                                     <th>
-                                        ???
+                                        Ткач пустоты
                                     </th>
                                     <th>
                                         "voidweaver"
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Жезл бедствий
+                                    </th>
+                                    <th>
+                                        "wand_aether"
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Взрывной жезл
+                                    </th>
+                                    <th>
+                                        "wand_fire"
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Морозный жезл
+                                    </th>
+                                    <th>
+                                        "wand_ice"
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Чумной жезл
+                                    </th>
+                                    <th>
+                                        "wand_poison"
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Сбрасывающий жезл
+                                    </th>
+                                    <th>
+                                        "wand_vigor"
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Жезл гравитации
+                                    </th>
+                                    <th>
+                                        "wand_stone"
                                     </th>
                                 </tr>
                             </tbody>
@@ -582,8 +657,77 @@ func moonjuggling(s1, s2)
     equipR @s1@
     equipL @s2@</code>
                 </pre>
+                <p>Использование такое же, как и у мундиалинга.</p>
             </div>
-            <p>Использование такое же, как и у мундиалинга.</p>
+            <hr>
+            <div id="stutterstepping">
+                <h3>Статтерстепинг</h3>
+                <div>
+                    <pre>
+                        <code>
+func stutterstep(i1,i2,i3,i4)
+  ?totaltime % 2 = 0
+    equipR @i1@
+    equipL @i2@
+  :
+    equipR @i3@
+    equipL @i4@</code>
+                    </pre>
+                    <p>Использование:</p>
+                    <pre>
+                        <code>
+stutterstep("mask" "trisk", "compound", "trisk")</code>
+                    </pre>
+                </div>
+            </div>
+            <hr>
+            <div id="smoothcasting">
+                <h3>Смузкастинг</h3>
+                <div>
+                    <pre>
+                        <code>
+var smoothcastTimer = 0
+func smoothcast(item1, item2, hands)
+  ?smoothcastTimer = 0
+    equipR trisk
+    equipL sword *0 +0
+    smoothcastTimer++
+  :
+    ?hands = 1
+      equip @item1@
+    :
+      equipR @item1@
+      equipL @item2@
+    smoothcastTimer = 0</code>
+                    </pre>
+                    <p>Использование:</p>
+                    <pre>
+                        <code>
+smoothcast("aether sword shiny", "aether sword -shiny", 2) // 2 руки 
+smoothcast("big stone crossbow +21", "", 1) // 1 рука</code>
+                    </pre>
+                </div>
+            </div>
+            <hr>
+            <div id="wands">
+                <h3>Активация жезлов</h3>
+                <p>В игру добавили активные способности у жезлов, и многим не понятно как этим пользоваться в StoneScript</p>
+                <p>Вот информация, которая может вам пригодиться:</p>
+                <pre>
+                    <code>
+item.GetCooldown("wand_руна") // узнать кд жезла
+item.GetCooldown("wand_poison") // пример
+
+item.CanActivate("wand_руна") // узнать, можно ли активировать жезл
+//Условия активации жезла:
+//Он находится в руке
+//Вы имеете достаточно брони для его активации
+//Он не находится на перезарядке
+
+equipR wand_hidden_руна //экипировка "волшебного" жезла
+equipL wand_hidden_poison //пример</code>
+                </pre>
+            </div>
         </div>
     </main>
 </div>
