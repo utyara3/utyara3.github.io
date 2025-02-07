@@ -45,6 +45,9 @@
                         <li>
                             <a href="#wands">Активация жезлов</a>
                         </li>
+                        <li>
+                            <a href="#reload">Перезарядка</a>
+                        </li>
                     </ul>
                 </ul>
             </nav>
@@ -726,6 +729,63 @@ item.CanActivate("wand_руна") // узнать, можно ли активи�
 
 equipR wand_hidden_руна //экипировка "волшебного" жезла
 equipL wand_hidden_poison //пример</code>
+                </pre>
+            </div>
+            <hr>
+            <div id="reload">
+                <h3>Перезарядка</h3>
+                <pre>
+<code>   
+func Display(x, y, color, text)
+  >`@x@,@y@,#@color@,@text@
+
+var right = []
+var left = []
+?loc.loop
+  right = []
+  left = []
+func check_weapons(x, y)
+  ?item.right.state = 3 & !right.Contains(item.right)
+    right.Add(item.right)
+  ?item.left.state = 3 & !left.Contains(item.left)
+    left.Add(item.left)
+
+  ?right.Count() > 0
+    Display(x,y,rainFF,"reload:")
+    for i = 0..right.Count()-1
+      Display(x,y+i+1,rainFF,right[i])
+
+  ?left.Count() > 0
+    Display(x, y, rainFF,"reload:")
+    for i = 0..left.Count()-1
+      Display(x,right.Count()+y+i+1,rainFF,left[i])
+
+
+func reload()
+  ?right.Count() > 0
+    smoothcast(right[0], "", 1)
+    right.RemoveAt(0)
+    return true
+
+
+  :?left.Count() > 0
+    smoothcast("trisk", left[0], 2)
+    left.RemoveAt(0)
+    return true
+
+  return false</code>
+                </pre>
+                <p>Использование:</p>
+                <pre>
+                    <code>
+//должно быть в начале прохождения локации
+check_weapons(0,0) //вывод перезаряжающихся оружий и добавление их в список
+
+?foe.distance > 23
+  ?reload() //сама перезарядка
+    return
+  :
+    ...</code>
                 </pre>
             </div>
         </div>
