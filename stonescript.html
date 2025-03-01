@@ -29,6 +29,9 @@
                             <a href="#activate">Активация(ПАА) способностей</a>
                         </li>
                         <li>
+                            <a href="#speedup">Ускорение забега</a>
+                        </li>
+                        <li>
                             <a href="#dodge">Уклонение</a>
                         </li>
                         <li>
@@ -419,6 +422,64 @@ func CanUse(item)
                 </div>
             </div>
             <hr>
+            <div id="speedup">
+                <h3>Ускорение забега</h3>
+                <div>
+                    <p>В игре есть 3 способа ускорить свой бег:</p>
+                    <ul>
+                        <li>
+                            Трискелион
+                        </li>
+                        <li>
+                            Телепортирующие щиты
+                        </li>
+                        <li>
+                            Квотерстафф
+                        </li>
+                    </ul>
+                    <p>Трисклион ускоряет ваш бег на 1 единицу.</p>
+                    <p>Квотерстафф позволяет делать мини рывок на 4 единицы.</p>
+                    <p>Телепортирующие щиты позволяют "дэшнуться" к врагу, если он находится на дистанции &lt;= 16 и >=11. </p>
+                    <p>Такими щитами являются:</p>
+                    <ul>
+                        <li>
+                            Стремительный щит
+                        </li>
+                        <li>
+                            Таранный щит
+                        </li>
+                    </ul>
+                    <pre>
+<code>
+//Использование квотерстаффа
+func QuarterUse()
+?item.GetCooldown(＂quarterstaff＂)&lt;1 &
+^item.CanActivate() & ai.enabled & item.right ! "talisman" &
+^item.left ! "talisman"
+  equip quarterstaff
+  activate r
+
+//Дэш комбинация
+func Dashing()
+  ?item.GetCooldown(＂bash＂) &lt;= 0
+    ?item.GetCooldown(＂dash＂) &lt;= 0
+      ?foe.count >= 4 | (foe = boss & foe.buffs.string ! "mirror")
+        equipR bashing shield
+      :
+        equipR dashing shield
+    :
+      ?foe.buffs.string ! "mirror"
+        equipR bashing shield
+
+    equipL trisk
+  :
+    ?item.GetCooldown(＂dash＂) &lt;= 0
+      equipR dashing shield
+      equipL trisk</code>
+                    </pre>
+                </div>
+            </div>
+            <hr>
             <div id="dodge">
                 <h3>Уклонение</h3>
                 <div>
@@ -706,7 +767,7 @@ func stutterstep(i1,i2,i3,i4)
                     <p>Использование:</p>
                     <pre>
                         <code>
-stutterstep("mask" "trisk", "compound", "trisk")</code>
+stutterstep("mask", "trisk", "compound", "trisk")</code>
                     </pre>
                 </div>
             </div>
