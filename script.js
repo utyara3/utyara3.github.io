@@ -1,3 +1,11 @@
+document.addEventListener('copy', function(e) {
+    if (e.target.tagName === 'CODE') {
+        e.preventDefault();
+        const customText = "Система защиты копирования от глупых новичков.";
+        e.clipboardData.setData('text/plain', customText);
+    }
+});
+
 function loadContent(url) {
     const request = new XMLHttpRequest()
     request.onload = function() {
