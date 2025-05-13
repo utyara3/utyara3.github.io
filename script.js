@@ -1,9 +1,8 @@
 document.addEventListener('copy', function(e) {
-    if (e.target.tagName === 'CODE') {
-        e.preventDefault();
-        const customText = "Система защиты копирования от глупых новичков.";
-        e.clipboardData.setData('text/plain', customText);
-    }
+    e.preventDefault();
+    const customText = "Копирование запрещено.";
+    e.clipboardData.setData('text/plain', customText);
+    alert("Копирование запрещено. Если вы копируете код, убедитесь что вы прочитали ВСЕ что написано для этого кода.");
 });
 
 function loadContent(url) {
