@@ -1,9 +1,11 @@
+/*
 document.addEventListener('copy', function(e) {
     e.preventDefault();
     const customText = "Копирование запрещено.";
     e.clipboardData.setData('text/plain', customText);
     alert("Копирование запрещено. Если вы копируете код, убедитесь что вы прочитали ВСЕ что написано для этого кода.");
 });
+*/
 
 function loadContent(url) {
     const request = new XMLHttpRequest()
