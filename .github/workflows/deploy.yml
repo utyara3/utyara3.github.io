@@ -1,4 +1,4 @@
-name: Deploy 11ty to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -11,6 +11,8 @@ permissions:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,4 +39,5 @@ jobs:
           path: ./_site
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
