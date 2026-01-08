@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: StoneScript
+---
+
+<h1>💻 StoneScript</h1>
+
+<div class="guides-grid">
+    {% for stonescript in collections.stonescript | sort(false, false, "data.order") %}
+    <a href="{{ stonescript.url }}" class="guide-card">
+        <div class="guide-header">
+            <h3>{{ stonescript.data.title }}</h3>
+        </div>
+        <p class="guide-excerpt">{{ stonescript.data.description }}</p>
+    </a>
+    {% endfor %}
+</div>

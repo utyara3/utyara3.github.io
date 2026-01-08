@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - StoneStory</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- ОБНОВЛЕННАЯ ШАПКА -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="/assets/icon.png" alt="StoneStory Icon" class="logo-icon"/>
+                <span class="logo-text"><a href="https://stonestoryrpg.com/">StoneStoryRPG</a></span>
+            </div>
+            <nav>
+                <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Главная</a>
+                <a href="/guide/" class="nav-link {% if page.url == '/guide/' %}active{% endif %}">Гайды</a>
+                <a href="/stonescript/" class="nav-link {% if page.url == '/stonescript/' %}active{% endif %}">StoneScript</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <!-- ОБНОВЛЕННЫЙ ФУТЕР -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Нужна помощь?</h4>
+                <p>Не нашли ответ или нашли ошибку?</p>
+                <a href="https://t.me/StoneStoryRpgRu" target="_blank" class="telegram-link">
+                    💬 Наш Telegram-чат
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- СКРИПТ ДЛЯ ПЛАВНЫХ ПЕРЕХОДОВ -->
+    <script>
+    // Просто плавное появление контента
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.style.opacity = '0';
+            mainContent.style.transform = 'translateY(30px)';
+            
+            requestAnimationFrame(() => {
+                mainContent.style.transition = 'all 2s cubic-bezier(0.22, 0.61, 0.36, 1)';
+                mainContent.style.opacity = '1';
+                mainContent.style.transform = 'translateY(0)';
+            });
+        }
+    });
+</script>
+</body>
+</html>

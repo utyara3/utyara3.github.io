@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: Гайды
+---
+
+<h1>📚 Гайды</h1>
+
+<div class="guides-grid">
+    {% for guide in collections.guides | sort(false, false, "data.order") %}
+    <a href="{{ guide.url }}" class="guide-card">
+        <div class="guide-header">
+            <h3>{{ guide.data.title }}</h3>
+        </div>
+        <p class="guide-excerpt">{{ guide.data.description }}</p>
+    </a>
+    {% endfor %}
+</div>

@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: StoneScript
+---
+
+<h1>📚 Спидран</h1>
+
+<div class="guides-grid">
+    {% for speedrun in collections.speedrun | sort(false, false, "data.order") %}
+    <a href="{{ speedrun.url }}" class="guide-card">
+        <div class="guide-header">
+            <h3>{{ speedrun.data.title }}</h3>
+        </div>
+        <p class="guide-excerpt">{{ speedrun.data.description }}</p>
+    </a>
+    {% endfor %}
+</div>
