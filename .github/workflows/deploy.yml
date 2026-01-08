@@ -29,7 +29,13 @@ jobs:
 
       - name: Build 11ty site
         run: npx @11ty/eleventy
-
+      
+      - name: Debug built files
+        run: |
+          ls -la ./_site
+          echo "Contents of _site:"
+          find ./_site -type f
+      
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
