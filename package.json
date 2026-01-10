@@ -12,5 +12,13 @@
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utyara3/utyara3.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/utyara3/utyara3.github.io/issues"
+  },
+  "homepage": "https://github.com/utyara3/utyara3.github.io#readme"
 }
