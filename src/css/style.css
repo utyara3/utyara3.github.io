@@ -1030,7 +1030,7 @@ footer::before {
     }
 
     .content ul, .content ol {
-        padding-left: 1.5rem;
+        padding-left: 2rem;
     }
 
     .video-container::before {

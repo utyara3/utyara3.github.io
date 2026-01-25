@@ -13,11 +13,11 @@ order: 5
 
 ---
 
-### Камень + Бронза  
+### Зелье удачи  
 <div class="image-container">
     <img src="/assets/guide/images/stonebronze.png" alt="камень бронза">
     <div class="image-info">
-        <div class="image-title">Зелье удачи</div>
+        <div class="image-title">Камень + Бронза</div>
     </div>
 </div>
 
@@ -27,11 +27,11 @@ order: 5
 
 ---
 
-### Дерево + Бронза  
+### Зелье берсерка  
 <div class="image-container">
     <img src="/assets/guide/images/woodbronze.png" alt="дерево бронза">
     <div class="image-info">
-        <div class="image-title">Зелье берсерка</div>
+        <div class="image-title">Дерево + Бронза</div>
     </div>
 </div>  
 
@@ -39,11 +39,11 @@ order: 5
 
 ---
 
-### Дерево + Дерево  
+### Зелье опыта  
 <div class="image-container">
     <img src="/assets/guide/images/woodwood.png" alt="дерево дерево">
     <div class="image-info">
-        <div class="image-title">Зелье опыта</div>
+        <div class="image-title">Дерево + Дерево </div>
     </div>
 </div>
 
@@ -51,11 +51,11 @@ order: 5
 
 ---
 
-### Камень + Камень  
+### Зелье силы  
 <div class="image-container">
     <img src="/assets/guide/images/stonestone.png" alt="камень камень">
     <div class="image-info">
-        <div class="image-title">Зелье силы</div>
+        <div class="image-title">Камень + Камень</div>
     </div>
 </div>
 
@@ -63,21 +63,21 @@ order: 5
 
 ---
 
-### Смола + Смола  
+### Зелье здоровья  
 <div class="image-container">
     <img src="/assets/guide/images/tartar.png" alt="смола смола">
     <div class="image-info">
-        <div class="image-title">Зелье здоровья</div>
+        <div class="image-title">Смола + Смола</div>
     </div>
 </div>
 
 ---
 
-### Бронза + Бронза  
+### Зелье молнии
 <div class="image-container">
     <img src="/assets/guide/images/bronzebronze.png" alt="бронза бронза">
     <div class="image-info">
-        <div class="image-title">Зелье молнии</div>
+        <div class="image-title">Бронза + Бронза</div>
     </div>
 </div>
 
@@ -85,41 +85,41 @@ order: 5
 
 ---
 
-### Смола + Камень  
+### Зелье защиты  
 <div class="image-container">
     <img src="/assets/guide/images/stonetar.png" alt="смола камень">
     <div class="image-info">
-        <div class="image-title">Зелье защиты</div>
+        <div class="image-title">Смола + Камень</div>
     </div>
 </div>
 
 ---
 
-### Смола + Дерево  
+### Зелье очищения  
 <div class="image-container">
     <img src="/assets/guide/images/woodtar.png" alt="смола дерево">
     <div class="image-info">
-        <div class="image-title">Зелье очищения</div>
+        <div class="image-title">Смола + Дерево</div>
     </div>
 </div>
 
 ---
 
-### Смола + Бронза  
+### Зелье вампиризма  
 <div class="image-container">
     <img src="/assets/guide/images/bronzetar.png" alt="смола бронза">
     <div class="image-info">
-        <div class="image-title">Зелье вампиризма</div>
+        <div class="image-title">Смола + Бронза</div>
     </div>
 </div>
 
 ---
 
-### Камень + Дерево  
+### Зелье невидимости  
 <div class="image-container">
     <img src="/assets/guide/images/stonewood.png" alt="камень дерево">
     <div class="image-info">
-        <div class="image-title">Зелье вампиризма</div>
+        <div class="image-title">Камень + Дерево</div>
     </div>
 </div>
 
