@@ -1,3 +1,5 @@
+site_url: https://utyara3.github.io
+
 backend:
   name: github
   repo: utyara3/utyara3.github.io  
