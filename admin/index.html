@@ -4,12 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Редакция Utyara Guide</title>
-  
-  <!-- Твои стили -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <!-- Важный момент: скрипт внизу и с type="module" для надежности -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Явная инициализация после загрузки страницы
+    window.onload = function() {
+      console.log('Decap CMS загружена');
+    };
+  </script>
 </body>
 </html>
