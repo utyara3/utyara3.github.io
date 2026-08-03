@@ -1,0 +1,58 @@
+backend:
+  name: github
+  repo: utyara3/utyara3.github.io  
+  branch: main                     
+  client_id: Ov23liIbslHcu5Eo37zF 
+
+# МАГИЯ: Создает Pull Request вместо прямого коммита!
+publish_mode: editorial_workflow
+
+# Настройка загрузки картинок под твою структуру
+media_folder: "src/assets/guide/images/uploads"
+public_folder: "/assets/guide/images/uploads"
+
+collections:
+  # --- КОЛЛЕКЦИЯ 1: ГАЙДЫ ---
+  - name: "guide"
+    label: "📚 Гайды"
+    folder: "src/content/guide"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "guide/{{slug}}"
+    fields:
+      - { label: "Layout (не трогать)", name: "layout", widget: "hidden", default: "content-layout.njk" }
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Краткое описание", name: "description", widget: "string", required: false }
+      - { label: "Автор", name: "author", widget: "string", default: "Участник комьюнити" }
+      - { label: "Порядок (order)", name: "order", widget: "number", default: 10, required: false }
+      - { label: "Текст статьи", name: "body", widget: "markdown", required: true }
+
+  # --- КОЛЛЕКЦИЯ 2: STONESCRIPT ---
+  - name: "stonescript"
+    label: "💻 Stonescript"
+    folder: "src/content/stonescript"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "stonescript/{{slug}}"
+    fields:
+      - { label: "Layout (не трогать)", name: "layout", widget: "hidden", default: "content-layout.njk" }
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Краткое описание", name: "description", widget: "string", required: false }
+      - { label: "Автор", name: "author", widget: "string", default: "Участник комьюнити" }
+      - { label: "Порядок (order)", name: "order", widget: "number", default: 10, required: false }
+      - { label: "Текст статьи", name: "body", widget: "markdown", required: true }
+
+  # --- КОЛЛЕКЦИЯ 3: SPEEDRUN ---
+  - name: "speedrun"
+    label: "⚡ Speedrun"
+    folder: "src/content/speedrun"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "speedrun/{{slug}}"
+    fields:
+      - { label: "Layout (не трогать)", name: "layout", widget: "hidden", default: "content-layout.njk" }
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Краткое описание", name: "description", widget: "string", required: false }
+      - { label: "Автор", name: "author", widget: "string", default: "Участник комьюнити" }
+      - { label: "Порядок (order)", name: "order", widget: "number", default: 10, required: false }
+      - { label: "Текст статьи", name: "body", widget: "markdown", required: true }
