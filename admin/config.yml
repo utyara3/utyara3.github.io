@@ -1,10 +1,8 @@
 site_url: https://utyara3.github.io
 
 backend:
-  name: github
-  repo: utyara3/utyara3.github.io  
-  branch: main                     
-  client_id: Ov23liIbslHcu5Eo37zF 
+  name: git-gateway
+  branch: main
 
 # МАГИЯ: Создает Pull Request вместо прямого коммита!
 publish_mode: editorial_workflow
