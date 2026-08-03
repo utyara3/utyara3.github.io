@@ -1,4 +1,4 @@
-site_url: https://utyara3.github.io
+site_url: https://precious-clafoutis-3f2959.netlify.app
 
 backend:
   name: git-gateway
@@ -18,7 +18,7 @@ collections:
     folder: "src/content/guide"
     create: true
     slug: "{{slug}}"
-    preview_path: "guide/{{slug}}"
+    preview_path: "content/guide/{{slug}}"
     fields:
       - { label: "Layout (не трогать)", name: "layout", widget: "hidden", default: "content-layout.njk" }
       - { label: "Заголовок", name: "title", widget: "string" }
@@ -33,7 +33,7 @@ collections:
     folder: "src/content/stonescript"
     create: true
     slug: "{{slug}}"
-    preview_path: "stonescript/{{slug}}"
+    preview_path: "content/stonescript/{{slug}}"
     fields:
       - { label: "Layout (не трогать)", name: "layout", widget: "hidden", default: "content-layout.njk" }
       - { label: "Заголовок", name: "title", widget: "string" }
@@ -48,7 +48,7 @@ collections:
     folder: "src/content/speedrun"
     create: true
     slug: "{{slug}}"
-    preview_path: "speedrun/{{slug}}"
+    preview_path: "content/speedrun/{{slug}}"
     fields:
       - { label: "Layout (не трогать)", name: "layout", widget: "hidden", default: "content-layout.njk" }
       - { label: "Заголовок", name: "title", widget: "string" }
