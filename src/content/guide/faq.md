@@ -18,6 +18,8 @@ order: 0
 
 **[Читайте статью "Крафты".](https://precious-clafoutis-3f2959.netlify.app/content/guide/itembook/)**
 
+
+
 ## Как быстро крафтить предметы?
 
 ![](/assets/guide/images/uploads/fastcrafting.png)
@@ -25,7 +27,9 @@ order: 0
 Проще говоря, сначала прокачайте составляющие до (возможного для вас) максимального уровня, а потом соединяйте компоненты в нужное оружие.
 
 ## *Что за буквы над моим оружием?*
-*Или*
+
+**[Читайте статью "Префиксы".](https://precious-clafoutis-3f2959.netlify.app/content/guide/prefixes/)**
+
 ## *Что даёт элементальное превосходство?*
 
 **[Читайте статью "Префиксы".](https://precious-clafoutis-3f2959.netlify.app/content/guide/prefixes/)**
