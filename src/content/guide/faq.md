@@ -12,8 +12,8 @@ order: 0
 
 > ### *Какие есть зелья в игре, как их варить и что они делают?*
 
-**Читайте статью "Зелья".**
+**[Читайте статью "Зелья".](https://precious-clafoutis-3f2959.netlify.app/content/guide/potions/)**
 
 > ### *Какие крафты есть в игре?*
 
-**Читайте статью "Крафты".**
+**[Читайте статью "Крафты".](https://precious-clafoutis-3f2959.netlify.app/content/guide/itembook/)**
