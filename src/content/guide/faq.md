@@ -1,6 +1,6 @@
 ---
 layout: content-layout.njk
-title: FAQ
+title: Частозадаваемые вопросы (ЧаВо)
 description: Здесь вы можете найти ответы на вопросы, которые часто задаются
   многими игроками.
 author: Che_Vo
