@@ -12,13 +12,11 @@ order: 0
 
 ## Какие есть зелья в игре, как их варить и что они делают?
 
-**[Читайте статью "Зелья".](https://precious-clafoutis-3f2959.netlify.app/content/guide/potions/)**
+[Читайте статью "Зелья".](https://precious-clafoutis-3f2959.netlify.app/content/guide/potions/)
 
 ## Какие крафты есть в игре?
 
-**[Читайте статью "Крафты".](https://precious-clafoutis-3f2959.netlify.app/content/guide/itembook/)**
-
-
+[Читайте статью "Крафты".](https://precious-clafoutis-3f2959.netlify.app/content/guide/itembook/)
 
 ## Как быстро крафтить предметы?
 
@@ -28,10 +26,10 @@ order: 0
 
 ## *Что за буквы над моим оружием?*
 
-**[Читайте статью "Префиксы".](https://precious-clafoutis-3f2959.netlify.app/content/guide/prefixes/)**
+[Читайте статью "Префиксы".](https://precious-clafoutis-3f2959.netlify.app/content/guide/prefixes/)
 
 ## *Что даёт элементальное превосходство?*
 
-**[Читайте статью "Префиксы".](https://precious-clafoutis-3f2959.netlify.app/content/guide/prefixes/)**
+[Читайте статью "Префиксы".](https://precious-clafoutis-3f2959.netlify.app/content/guide/prefixes/)
 
 # *WIP!!⚠⚠‼🚷*
