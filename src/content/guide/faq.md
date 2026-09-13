@@ -1,6 +1,8 @@
 ---
 layout: content-layout.njk
 title: FAQ
+description: Здесь вы можете найти ответы на вопросы, которые часто задаются
+  многими игроками.
 author: Che_Vo
 order: 0
 ---
