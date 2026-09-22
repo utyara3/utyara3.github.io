@@ -1,6 +1,6 @@
 ---
 layout: content-layout.njk
-title: chances
+title: Шансы
 description: Какой у предметов шанс выпадения?
 author: Che_Vo
 order: 10
